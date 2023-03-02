@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'edge-network-nginx-edgefarm'
+  labels:
+    app: 'edge-network-edgefarm'
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 'edge-network-edgefarm'
+  template:
+    metadata:
+      labels:
+        app: 'edge-network-edgefarm'
+    spec:
+      containers:
+        - name: 'edge-network-nginx-edgefarm'
+          image: nginx:latest
+          imagePullPolicy: Always

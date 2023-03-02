@@ -1,0 +1,13 @@
+apiVersion: network.edgefarm.io/v1alpha1
+kind: EdgeNetwork
+metadata:
+  name: edge-network-edgefarm
+  labels:
+    app: edge-network-edgefarm
+spec:
+  nodeSelector: 
+    project: edgefarm
+  network: test-network-def-edgefarm
+  limits:
+    fileStorage: 10G
+    inMemoryStorage: 1G
